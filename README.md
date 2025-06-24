@@ -1,6 +1,7 @@
 # isk-generator
 Веб-приложение для создания исковых заявлений с помощью простой формы ввода данных.
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <title>Генератор исковых заявлений</title>
