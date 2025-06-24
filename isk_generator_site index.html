@@ -19,73 +19,27 @@
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-  <!-- Шапка сайта -->
+  <!-- Шапка -->
   <header class="bg-blue-600 text-white p-4 shadow-md">
     <h1 class="text-center text-2xl font-bold">Генератор исковых заявлений</h1>
   </header>
 
-  <!-- Основной контейнер -->
+  <!-- Контент -->
   <main class="flex-1 p-8 grid lg:grid-cols-2 gap-8">
-    <!-- Раздел О генераторе -->
+    <!-- Описание -->
     <section class="bg-white rounded-2xl shadow-xl p-6 space-y-4">
       <h2 class="text-xl font-semibold text-blue-600">О генераторе</h2>
-      <p class="text-gray-700">Этот генератор помогает быстро создавать типовые исковые заявления. Введите свои данные, а сайт сгенерирует готовый текст для подачи в суд.</p>
-      <p class="text-gray-700">Подходит для студентов юридических факультетов и начинающих юристов для тренировки навыков составления процессуальных документов.</p>
+      <p class="text-gray-700">Выберите тип иска, введите данные и получите шаблон заявления автоматически.</p>
     </section>
 
-    <!-- Форма для генерации -->
+    <!-- Форма -->
     <section class="bg-white rounded-2xl shadow-xl p-6 space-y-4">
       <h2 class="text-xl font-semibold text-blue-600">Сформировать заявление</h2>
       <form id="claim-form" class="space-y-4">
         <select id="type-of-claim" class="w-full p-2 border rounded" required>
           <option value="">Выберите тип иска</option>
-          <option>Об установлении факта имеющего юридическое значение</option>
-          <option>Об установлении факта принятия наследства</option>
-          <option>О вынесении судебного приказа о взыскании алиментов</option>
-          <option>О признании гражданина безвестно отсутствующим</option>
-          <option>О признании гражданина недееспособным</option>
-          <option>О признании гражданина ограничено дееспособным</option>
-          <option>Об установлении факта родственных отношений</option>
-          <option>Об установлении факта смерти гражданина</option>
-          <option>О взыскании алиментов в твердой денежной сумме с учетом прошедшего периода</option>
-          <option>О взыскании алиментов в твердой денежной сумме</option>
-          <option>О взыскании задолженности</option>
-          <option>О взыскании задолженности по договору</option>
-          <option>О взыскании задолженности по договору аренды</option>
-          <option>О взыскании заработной платы</option>
-          <option>О возмещении ущерба ДТП</option>
-          <option>О взыскании средств на содержание родителя</option>
-          <option>О возмещении вреда в связи со смертью кормильца</option>
-          <option>О возмещении вреда, причиненного повреждением здоровья</option>
-          <option>О возмещении морального вреда</option>
-          <option>О восстановлении на работе и взыскании заработной платы за время вынужденного прогула</option>
-          <option>О восстановлении на работе и оплате за время вынужденного прогула</option>
-          <option>О восстановлении пропущенного срока принятия наследства</option>
-          <option>О выселении</option>
-          <option>О праве собственности на приватизируемое жилище</option>
-          <option>О прекращении права собственности</option>
-          <option>О признании действительными актов выполненных работ</option>
-          <option>Об оспаривании завещания</option>
-          <option>О признании недействительным договора</option>
-          <option>Оспаривание свидетельства о праве на наследство</option>
-          <option>О признании гражданина недостойным наследником</option>
-          <option>О признании незаконным расторжение договора</option>
-          <option>О признании обязательств исполненными</option>
-          <option>О признании права долевой собственности на домовладение</option>
-          <option>О признании права собственности по приобретательной давности</option>
-          <option>О признании права собственности на самовольную постройку</option>
-          <option>О разделе наследственного имущества</option>
-          <option>О разделе имущества супругов</option>
-          <option>О расторжении брака</option>
-          <option>О расторжении договора</option>
-          <option>О сносе незаконного строения</option>
-          <option>Об истребовании имущества из чужого незаконного владения</option>
-          <option>Об освобождении имущества от ареста</option>
-          <option>Об отмене приказа об увольнении и восстановлении на работе</option>
-          <option>Об уменьшении размера алиментов</option>
-          <option>Об установлении отцовства и взыскании алиментов</option>
-          <option>Об устранении нарушений, не связанных с лишением владения</option>
-          <option>О признании приказов о дисциплинарных взысканиях незаконными</option>
+          <option value="zadolzhnost">О взыскании задолженности по договору</option>
+          <option value="moralny-vred">О возмещении морального вреда</option>
         </select>
         <input id="fio-istca" class="w-full p-2 border rounded" placeholder="ФИО истца" required />
         <input id="address-istca" class="w-full p-2 border rounded" placeholder="Адрес истца" required />
@@ -96,7 +50,7 @@
       </form>
     </section>
 
-    <!-- Раздел результата -->
+    <!-- Результат -->
     <section class="bg-white rounded-2xl shadow-xl p-6 space-y-4 lg:col-span-2">
       <h2 class="text-xl font-semibold text-blue-600">Ваше заявление</h2>
       <textarea id="result" class="w-full border rounded h-64" readonly></textarea>
@@ -107,16 +61,14 @@
     </section>
   </main>
 
-  <!-- Подвал сайта -->
+  <!-- Подвал -->
   <footer class="bg-blue-600 text-white p-4 text-center text-sm">
-    © 2025 Генератор исковых заявлений — учебный проект студента-юриста
+    © 2025 Генератор исковых заявлений
   </footer>
 
   <script>
     const form = document.getElementById('claim-form');
     const result = document.getElementById('result');
-    const copyButton = document.getElementById('copy-button');
-    const downloadButton = document.getElementById('download-button');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -127,28 +79,25 @@
       const sutPretenzii = document.getElementById('sut-pretenzii').value;
       const summaIska = document.getElementById('summa-iska').value;
 
-      const text = `В суд\n\n` +
-        `Тип иска: ${claimType}\n\n` +
-        `Истец: ${fioIstca}, адрес: ${addressIstca}\n` +
-        `Ответчик: ${fioOtvechika}\n\n` +
-        `ИСКОВОЕ ЗАЯВЛЕНИЕ\n\n` +
-        `Я, ${fioIstca}, предъявляю иск к ${fioOtvechika} в связи с тем, что ${sutPretenzii}, в результате чего мне причинён ущерб в размере ${summaIska} тенге.\n\n` +
-        `Прошу суд:\n` +
-        `1. Рассмотреть настоящее заявление.\n` +
-        `2. Взыскать с ответчика сумму ущерба в размере ${summaIska} тенге.\n` +
-        `3. Возместить судебные расходы.\n\n` +
-        `Дата: ____________\n` +
-        `Подпись: ____________`;
+      let text = '';
+
+      if (claimType === 'zadolzhnost') {
+        text = `ИСК\nо взыскании задолженности по договору\n\nМежду мной, ${fioIstca}, и ${fioOtvechika} был заключен договор займа. Ответчик не исполнил обязательства. Требую взыскать ${summaIska} тенге.\n\nОбоснование: статьи 272, 293, 295 ГК РК.\n\nПрошу:\n1. Взыскать задолженность.\n2. Взыскать неустойку.\n3. Взыскать судебные расходы.`;
+      } else if (claimType === 'moralny-vred') {
+        text = `ИСК\nо возмещении морального вреда\n\nЯ, ${fioIstca}, заявляю иск к ${fioOtvechika} в связи с тем, что ${sutPretenzii}. Требую компенсацию морального вреда в размере ${summaIska} тенге.\n\nОбоснование: статьи 917, 951, 952 ГК РК.\n\nПрошу:\n1. Удовлетворить иск.\n2. Взыскать компенсацию.\n3. Взыскать судебные расходы.`;
+      } else {
+        text = `Тип иска: ${claimType}\n\nИстец: ${fioIstca}, адрес: ${addressIstca}\nОтветчик: ${fioOtvechika}\n\n${sutPretenzii}\nСумма: ${summaIska} тенге.`;
+      }
 
       result.value = text;
     });
 
-    copyButton.addEventListener('click', () => {
+    document.getElementById('copy-button').addEventListener('click', () => {
       result.select();
       document.execCommand('copy');
     });
 
-    downloadButton.addEventListener('click', () => {
+    document.getElementById('download-button').addEventListener('click', () => {
       const blob = new Blob([result.value], { type: 'text/plain' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
